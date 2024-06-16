@@ -4,6 +4,7 @@ import * as THREE from "https://cdn.skypack.dev/three@0.129.0/build/three.module
 import { OrbitControls } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/controls/OrbitControls.js";
 // To allow for importing the .gltf file
 import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js";
+import { DRACOLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/DRACOLoader.js";
 
 //Create a Three.JS Scene
 const scene = new THREE.Scene();
@@ -34,20 +35,27 @@ let objToRender = 'sphere';
 //Instantiate a loader for the .gltf file
 const loader = new GLTFLoader();
 
-//Load the file
+// Instantiate DRACOLoader
+const dracoLoader = new DRACOLoader();
+dracoLoader.setDecoderPath('https://cdn.jsdelivr.net/npm/three@0.129.0/examples/js/libs/draco/gltf/');
+
+// Tell GLTFLoader to use DRACOLoader
+loader.setDRACOLoader(dracoLoader);
+
+// Load the file
 loader.load(
-  `models/${objToRender}/scene.gltf`,
+  `models/${objToRender}/scene.glb`,
   function (gltf) {
-    //If the file is loaded, add it to the scene
+    // If the file is loaded, add it to the scene
     object = gltf.scene;
     scene.add(object);
   },
   function (xhr) {
-    //While it is loading, log the progress
+    // While it is loading, log the progress
     console.log((xhr.loaded / xhr.total * 100) + '% loaded');
   },
   function (error) {
-    //If there is an error, log it
+    // If there is an error, log it
     console.error(error);
   }
 );
@@ -126,3 +134,15 @@ window.onpointermove = (e) => {
 
 // Start the 3D rendering
 animate();
+
+window.onload = () => {
+  console.log("window loaded");
+}
+
+document.onload = () => {
+  console.log("document loaded");
+}
+
+document.body.onload = () => {
+  console.log("body loaded");
+}
