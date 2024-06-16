@@ -132,8 +132,6 @@ window.onpointermove = (e) => {
   }, { duration: 3000, fill: "forwards" });
 }
 
-// Start the 3D rendering
-animate();
 
 window.onload = () => {
   console.log("window loaded");
@@ -146,3 +144,6 @@ document.onload = () => {
 document.body.onload = () => {
   console.log("body loaded");
 }
+
+// Start the 3D rendering
+animate();
