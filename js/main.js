@@ -91,20 +91,17 @@ const animate = () => {
     halfScrW = window.innerWidth / 2;
     halfScrH = window.innerHeight / 2;
 
-    // Smooth transition for vertical rotation
     const targetRotationY = mouseY / window.innerHeight;
     const targetPosX = -(halfScrW - mouseX) / window.innerWidth;
     const targetPosY = (halfScrH - mouseY) / window.innerHeight;
 
-    // Smoothly interpolate the position
-    currentPosX += (targetPosX - currentPosX) * 0.1; // Adjust 0.1 for smoother/less smooth transition
-    currentPosY += (targetPosY - currentPosY) * 0.1; // Adjust 0.1 for smoother/less smooth transition
+    // interp
+    currentPosX += (targetPosX - currentPosX) * 0.1;
+    currentPosY += (targetPosY - currentPosY) * 0.1;
 
     object.position.x = currentPosX;
     object.position.y = currentPosY;
-    object.rotation.x += (targetRotationY - object.rotation.x) * 0.05; // Adjust 0.05 for smoother/less smooth transition
-
-    // Smooth transition for horizontal rotation controlled by mouse
+    object.rotation.x += (targetRotationY - object.rotation.x) * 0.05;
     object.rotation.y += 0.001;
   }
   renderer.render(scene, camera);
@@ -115,8 +112,6 @@ window.addEventListener("resize", function () {
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
-
-  // Update half screen width and height
 });
 
 // Add mouse position listener, so we can make the sphere move
