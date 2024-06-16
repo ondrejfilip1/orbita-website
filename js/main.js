@@ -126,6 +126,10 @@ window.addEventListener("resize", function () {
 window.onpointermove = (e) => {
   mouseX = e.clientX;
   mouseY = e.clientY;  
+  requestAnimationFrame(animateBlob);
+}
+
+const animateBlob = () => {
   blob.animate({
     left: `${mouseX}px`,
     top: `${mouseY}px`
