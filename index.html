@@ -26,16 +26,17 @@ This work is based on "Abstract Geometric Sphere" (https://sketchfab.com/3d-mode
 </head>
 
 <body>
+  <div id="blob"></div>
   <header class="d-flex justify-content-between align-items-center position-fixed p-5 z-index-5 w-100">
     <a href="/" class="image-link">
-    <img src="./logo.png" alt="logo" draggable="false">
-  </a>
+      <img src="./logo.png" alt="logo" draggable="false">
+    </a>
     <div class="wrapper-buttons">
       <a href="#">
         <div>Home</div>
         <div>Home</div>
       </a>
-      <a href="#">
+      <a href="#about-us">
         <div>About us</div>
         <div>About us</div>
       </a>
@@ -43,13 +44,14 @@ This work is based on "Abstract Geometric Sphere" (https://sketchfab.com/3d-mode
         <div>Services</div>
         <div>Services</div>
       </a>
-      <a href="#">
+      <a href="#contacts">
         <div>Contacts</div>
         <div>Contacts</div>
       </a>
     </div>
     <svg fill="#f4ebec" version="1.1" id="XMLID_309_" xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" xml:space="preserve" onclick="alert('too lazy to do this')">
+      xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" xml:space="preserve"
+      onclick="alert('too lazy to do this')">
       <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
       <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
       <g id="SVGRepo_iconCarrier">
@@ -61,11 +63,25 @@ This work is based on "Abstract Geometric Sphere" (https://sketchfab.com/3d-mode
       </g>
     </svg>
   </header>
-  <div id="blob"></div>
+
   <div class="d-flex justify-content-center align-items-center container position-relative min-vh-100">
     <h1 dis="INOVATION AND DESIGN" class="position-relative">INOVATION AND DESIGN.</h1>
   </div>
-  <div class="d-flex justify-content-center align-items-center container position-relative min-vh-100"></div>
+  <div class="d-flex justify-content-center align-items-center position-absolute-nf min-vh-100 w-100 z-index-3"
+    id="about-us-container">
+    <div class="d-flex justify-content-center align-items-center container">
+      <p class="display-1 text-lowercase" id="about-us">
+        Embrace <span class="mhiora">starkness</span> and 
+        <span class="mhiora">rawness</span> with our <span
+          class="mhiora">minimalist</span> approach to web design. We strip away excess to highlight <span
+          class="mhiora">essential</span>, <span class="mhiora">impactful</span> elements.</p>
+    </div>
+  </div>
+  <div class="min-vh-200">
+  </div>
+  <div class="d-flex justify-content-center align-items-center container position-relative min-vh-100" id="contacts">
+    <h1 dis="Made by Ondřej Filip." class="position-relative text-center copyright">Made by Ondřej Filip.</h1>
+  </div>
   <main>
     <div id="container3D"></div>
   </main>

@@ -4,6 +4,11 @@
 }
 
 @font-face {
+  font-family: "Mhiora";
+  src: url(../mhiora-vm7rm.otf);
+}
+
+@font-face {
   font-family: "Magnetik";
   src: url(../Magnetik-Regular.otf);
 }
@@ -14,6 +19,10 @@
   --primary: #d9909a;
   --secondary: #852431;
   --accent: #d63449;
+}
+
+html {
+  transition: .5s filter;
 }
 
 body {
@@ -27,13 +36,14 @@ body {
 h1 {
   font-family: "Molend";
   font-size: 8vmax;
-  margin-left: 2rem;
 }
 
 h1::before {
   content: attr(dis);
   position: absolute;
   z-index: 3;
+  left: 0;
+    width: 100%;
   color: transparent;
   -webkit-text-stroke: 1.5px var(--text);
 }
@@ -45,7 +55,7 @@ h1:hover::before, h1::before:hover {
 #container3D canvas {
   width: 100% !important;
   height: 100% !important;
-  position: absolute;
+  position: fixed;
   z-index: 2;
   top: 0;
   left: 0;
@@ -149,6 +159,61 @@ header a:focus {
   animation: .5s scaleDown;
 }
 
+.mhiora {
+  font-family: "Mhiora", sans-serif;
+  letter-spacing: -0.03em;
+  position: relative;
+  display: inline-block;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-color: var(--text);
+}
+
+.mhiora::before {
+  content: "";
+  position: absolute;
+  width: var(--before-width, 0%);
+  transition: .3s width cubic-bezier(0, 1.1, 0.25, 1);
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--text);
+  mix-blend-mode: difference;
+}
+
+.position-relative-nf {
+  position: relative;
+}
+
+.position-absolute-nf {
+  position: absolute;
+}
+
+.min-vh-200 {
+  min-height: 200vh;
+}
+
+
+/*
+.mhiora::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  background-color: var(--text);
+  height: 2px;
+  width: 0;
+  bottom: 0;
+}
+  */
+
+.display-custom { 
+  font-size: calc(2rem + 4.5vw); 
+  font-weight: 300; 
+  line-height: 1.2;
+}
+
 @keyframes scaleDown {
   from {
     scale: 1;
@@ -169,6 +234,16 @@ header .wrapper-buttons:hover a:not(:hover) {
 
 .z-index-5 {
   z-index: 5;
+}
+
+
+.z-index-3 {
+  z-index: 3;
+}
+
+.copyright {
+  font-family: "Magnetik";
+  font-size: 6vmax;
 }
 
 @media only screen and (max-width: 530px) {

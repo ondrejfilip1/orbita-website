@@ -48,6 +48,8 @@ loader.load(
   function (gltf) {
     // If the file is loaded, add it to the scene
     object = gltf.scene;
+
+    
     scene.add(object);
   },
   function (xhr) {
@@ -136,17 +138,48 @@ const animateBlob = () => {
   }, { duration: 3000, fill: "forwards" });
 }
 
-window.onload = () => {
-  console.log("window loaded");
-}
+const aboutUsContainer = document.getElementById("about-us-container");
+const mhioraElements = document.querySelectorAll('.mhiora');
 
-document.onload = () => {
-  console.log("document loaded");
-}
+window.onscroll = () => {
+  const scrollPosition = window.scrollY;
+  const startScroll = window.innerHeight;
+  const endScroll = window.innerHeight * 2;
 
-document.body.onload = () => {
-  console.log("body loaded");
-}
+  // scroll calculations
+  let percent = (scrollPosition - startScroll) / (endScroll - startScroll) * 100;
+  percent = Math.min(Math.max(percent, 0), 100); // clamp thingy
+
+  if (scrollPosition >= 0 && scrollPosition < window.innerHeight / 2) {
+    document.documentElement.style.filter = "hue-rotate(0deg)";
+  } else if (scrollPosition >= window.innerHeight / 2 && scrollPosition < window.innerHeight * 2.5) {
+    document.documentElement.style.filter = "hue-rotate(-80deg)";
+  } else {
+    document.documentElement.style.filter = "hue-rotate(-250deg)";
+  }
+
+  if (scrollPosition > startScroll && scrollPosition <= endScroll) {
+    aboutUsContainer.style.top = "0px";
+    aboutUsContainer.style.position = "fixed";
+
+    mhioraElements.forEach(mhioraElement => {
+      mhioraElement.style.setProperty('--before-width', `${percent}%`);
+    });
+  } else if (scrollPosition > endScroll) {
+    aboutUsContainer.style.top = "200vh";
+    aboutUsContainer.style.position = "absolute";
+
+    mhioraElements.forEach(mhioraElement => {
+      mhioraElement.style.setProperty('--before-width', '100%');
+    });
+  } else {
+    aboutUsContainer.style.top = "100vh";
+    aboutUsContainer.style.position = "absolute";
+    mhioraElements.forEach(mhioraElement => {
+      mhioraElement.style.setProperty('--before-width', '0%');
+    });
+  }
+};
 
 // Start the 3D rendering
 animate();
