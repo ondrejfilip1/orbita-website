@@ -154,8 +154,6 @@ window.onscroll = () => {
     document.documentElement.style.filter = "hue-rotate(0deg)";
   } else if (scrollPosition >= window.innerHeight / 2 && scrollPosition < window.innerHeight * 2.5) {
     document.documentElement.style.filter = "hue-rotate(-80deg)";
-  } else {
-    document.documentElement.style.filter = "hue-rotate(-250deg)";
   }
 
   if (scrollPosition > startScroll && scrollPosition <= endScroll) {
