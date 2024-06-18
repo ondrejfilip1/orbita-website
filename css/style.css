@@ -108,6 +108,7 @@ h1:hover::before, h1::before:hover {
 }
 
 header {
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.25), transparent);
   font-size: 1.2rem;
 }
 
