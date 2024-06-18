@@ -256,3 +256,15 @@ header .wrapper-buttons:hover a:not(:hover) {
     display: none;
   }
 }
+
+div#js-cursor {
+  position: fixed;
+  opacity: 0;
+  width: 40px;
+  height: 40px;
+  z-index: 99;
+  border: 1px solid var(--accent);
+  border-radius: 100%;
+  transition: .5s opacity;
+  pointer-events: none;
+}
