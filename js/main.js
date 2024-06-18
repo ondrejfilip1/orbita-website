@@ -181,3 +181,21 @@ window.onscroll = () => {
 
 // Start the 3D rendering
 animate();
+
+
+const js_cursor = document.getElementById("js-cursor");
+document.onmousemove = (e) => {
+  js_cursor.animate({
+    left: `${e.clientX-20}px`,
+    top: `${e.clientY-20}px`
+  }, { duration: 500, fill: "forwards" });
+}
+
+document.onmouseleave = () => {
+  js_cursor.style.opacity = "0";
+}
+
+
+document.onmouseenter = () => {
+  js_cursor.style.opacity = "1";
+}
