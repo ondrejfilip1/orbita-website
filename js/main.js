@@ -48,7 +48,6 @@ loader.load(
   function (gltf) {
     // If the file is loaded, add it to the scene
     object = gltf.scene;
-
     
     scene.add(object);
   },
@@ -154,8 +153,6 @@ window.onscroll = () => {
     document.documentElement.style.filter = "hue-rotate(0deg)";
   } else if (scrollPosition >= window.innerHeight / 2 && scrollPosition < window.innerHeight * 2.5) {
     document.documentElement.style.filter = "hue-rotate(-80deg)";
-  } else {
-    document.documentElement.style.filter = "hue-rotate(-250deg)";
   }
 
   if (scrollPosition > startScroll && scrollPosition <= endScroll) {
@@ -183,3 +180,46 @@ window.onscroll = () => {
 
 // Start the 3D rendering
 animate();
+
+const js_cursor = document.getElementById("js-cursor");
+document.onmousemove = (e) => {
+  js_cursor.animate({
+    left: `${e.clientX - 25}px`,
+    top: `${e.clientY - 25}px`
+  }, { duration: 500, fill: "forwards" });
+}
+
+document.onmouseleave = () => {
+  js_cursor.style.opacity = "0";
+}
+
+
+document.onmouseenter = () => {
+  js_cursor.style.opacity = "1";
+}
+
+
+let openedMenu = false;
+const headerMenu = document.getElementById("header-menu");
+const menuButton = document.getElementById("menuButton");
+const closeButton = document.getElementById("closeButton");
+
+menuButton.onclick = () => {
+  openedMenu = !openedMenu;
+  if (openedMenu) { // menu is enabled
+    headerMenu.style.height = "100vh";
+    headerMenu.style.opacity = "1";
+    document.body.style.overflowY = "hidden";
+  } else { // menu aint enabled
+    headerMenu.style.height = "0";
+    headerMenu.style.opacity = "0";
+    document.body.style.overflowY = "unset";
+  }
+}
+
+closeButton.onclick = () => {
+  headerMenu.style.height = "0";
+  headerMenu.style.opacity = "0";
+  document.body.style.overflowY = "unset";
+  openedMenu = false;
+}

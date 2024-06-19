@@ -49,9 +49,8 @@ This work is based on "Abstract Geometric Sphere" (https://sketchfab.com/3d-mode
         <div>Contacts</div>
       </a>
     </div>
-    <svg fill="#f4ebec" version="1.1" id="XMLID_309_" xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" xml:space="preserve"
-      onclick="alert('too lazy to do this')">
+    <svg id="menuButton" fill="#f4ebec" version="1.1" id="XMLID_309_" xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" xml:space="preserve">
       <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
       <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
       <g id="SVGRepo_iconCarrier">
@@ -62,6 +61,7 @@ This work is based on "Abstract Geometric Sphere" (https://sketchfab.com/3d-mode
         </g>
       </g>
     </svg>
+
   </header>
 
   <div class="d-flex justify-content-center align-items-center container position-relative min-vh-100">
@@ -71,10 +71,11 @@ This work is based on "Abstract Geometric Sphere" (https://sketchfab.com/3d-mode
     id="about-us-container">
     <div class="d-flex justify-content-center align-items-center container">
       <p class="display-1 text-lowercase" id="about-us">
-        Embrace <span class="mhiora">starkness</span> and 
-        <span class="mhiora">rawness</span> with our <span
-          class="mhiora">minimalist</span> approach to web design. We strip away excess to highlight <span
-          class="mhiora">essential</span>, <span class="mhiora">impactful</span> elements.</p>
+        Embrace <span class="mhiora">starkness</span> and
+        <span class="mhiora">rawness</span> with our <span class="mhiora">minimalist</span> approach to web design. We
+        strip away excess to highlight <span class="mhiora">essential</span>, <span class="mhiora">impactful</span>
+        elements.
+      </p>
     </div>
   </div>
   <div class="min-vh-200">
@@ -82,6 +83,59 @@ This work is based on "Abstract Geometric Sphere" (https://sketchfab.com/3d-mode
   <div class="d-flex justify-content-center align-items-center container position-relative min-vh-100" id="contacts">
     <h1 dis="Made by Ondřej Filip." class="position-relative text-center copyright">Made by Ondřej Filip.</h1>
   </div>
+  <div class="position-fixed header-menu" id="header-menu">
+
+    <div class="closeButtonWrapper">
+    <svg id="closeButton" fill="#f4ebec" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+      <g id="SVGRepo_iconCarrier">
+        <title>ionicons-v5-m</title>
+        <polygon
+          points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49">
+        </polygon>
+      </g>
+    </svg>
+</div>
+    <a href="">
+      <span class="small-text-numbers">01</span>
+      <span class="link-menu">About us</span>
+      <svg viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+        <g id="SVGRepo_iconCarrier">
+          <path d="M9 8.5H16.5V16" stroke="#f4ebec" stroke-width="1.2"></path>
+          <path d="M16.5 8.5L7 18" stroke="#f4ebec" stroke-width="1.2"></path>
+        </g>
+      </svg>
+    </a>
+    <a href="">
+      <span class="small-text-numbers">02</span>
+      <span class="link-menu">Services</span>
+      <svg viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+        <g id="SVGRepo_iconCarrier">
+          <path d="M9 8.5H16.5V16" stroke="#f4ebec" stroke-width="1.2"></path>
+          <path d="M16.5 8.5L7 18" stroke="#f4ebec" stroke-width="1.2"></path>
+        </g>
+      </svg>
+    </a>
+    <a href="">
+      <span class="small-text-numbers">03</span>
+      <span class="link-menu">Contacts</span>
+      <svg viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+        <g id="SVGRepo_iconCarrier">
+          <path d="M9 8.5H16.5V16" stroke="#f4ebec" stroke-width="1.2"></path>
+          <path d="M16.5 8.5L7 18" stroke="#f4ebec" stroke-width="1.2"></path>
+        </g>
+      </svg>
+    </a>
+  </div>
+  <div id="js-cursor"></div>
+
   <main>
     <div id="container3D"></div>
   </main>
