@@ -206,14 +206,14 @@ const closeButton = document.getElementById("closeButton");
 const headerMenuLinks = document.querySelectorAll(".header-menu a");
 
 const hideMenu = () => {
-  headerMenu.style.height = "0";
+  headerMenu.style.minHeight = "0";
   headerMenu.style.opacity = "0";
   document.body.style.overflowY = "unset";
   openedMenu = false;
 }
 
 const showMenu = () => {
-  headerMenu.style.height = "100vh";
+  headerMenu.style.minHeight = "100vh";
   headerMenu.style.opacity = "1";
   document.body.style.overflowY = "hidden";
 }

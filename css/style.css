@@ -43,6 +43,7 @@ h1 {
 }
 
 h1::before {
+  font-size: 8vmax;
   content: attr(dis);
   position: absolute;
   z-index: 3;
@@ -251,6 +252,10 @@ header .wrapper-buttons:hover a:not(:hover) {
   font-size: 6vmax;
 }
 
+h1.copyright::before {
+  font-size: 6vmax;
+}
+
 @media only screen and (max-width: 530px) {
   header .wrapper-buttons {
     display: none;
@@ -267,14 +272,16 @@ header .wrapper-buttons:hover a:not(:hover) {
 }
 
 .header-menu {
-  transition: .3s height ease-out, .2s opacity;
+  transition: .3s min-height ease-out, .2s opacity;
   width: 100%;
   z-index: 98;
   height: 0;
+  min-height: 0;
   top: 0;
   left: 0;
   background-color: var(--background);
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
   display: flex;
   opacity: 0;
   flex-direction: column;
