@@ -203,23 +203,36 @@ let openedMenu = false;
 const headerMenu = document.getElementById("header-menu");
 const menuButton = document.getElementById("menuButton");
 const closeButton = document.getElementById("closeButton");
+const headerMenuLinks = document.querySelectorAll(".header-menu a");
 
-menuButton.onclick = () => {
-  openedMenu = !openedMenu;
-  if (openedMenu) { // menu is enabled
-    headerMenu.style.height = "100vh";
-    headerMenu.style.opacity = "1";
-    document.body.style.overflowY = "hidden";
-  } else { // menu aint enabled
-    headerMenu.style.height = "0";
-    headerMenu.style.opacity = "0";
-    document.body.style.overflowY = "unset";
-  }
-}
-
-closeButton.onclick = () => {
+const hideMenu = () => {
   headerMenu.style.height = "0";
   headerMenu.style.opacity = "0";
   document.body.style.overflowY = "unset";
   openedMenu = false;
+}
+
+const showMenu = () => {
+  headerMenu.style.height = "100vh";
+  headerMenu.style.opacity = "1";
+  document.body.style.overflowY = "hidden";
+}
+
+menuButton.onclick = () => {
+  openedMenu = !openedMenu;
+  if (openedMenu) { // menu is enabled
+    showMenu();
+  } else { // menu aint enabled
+    hideMenu();
+  }
+}
+
+closeButton.onclick = () => {
+  hideMenu();
+}
+
+for (let i = 0; i < headerMenuLinks.length; i++) {
+  headerMenuLinks[i].onclick = () => {
+    hideMenu();
+  };
 }
